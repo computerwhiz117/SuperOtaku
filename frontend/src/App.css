@@ -1,0 +1,93 @@
+.app { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+
+header { text-align: center; margin-bottom: 2rem; }
+header h1 { font-size: 2.6rem; letter-spacing: -1px; }
+.accent { color: #a78bfa; }
+.tagline { color: #9a96b0; margin-top: 0.35rem; }
+
+.stats { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+.stat {
+  background: #1b1b2e; border: 1px solid #2d2d45; border-radius: 999px;
+  padding: 0.4rem 1rem; font-size: 0.9rem;
+}
+
+.add-form { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.add-form input {
+  flex: 1; min-width: 220px; background: #1b1b2e; border: 1px solid #2d2d45;
+  color: #eceaf5; border-radius: 10px; padding: 0.7rem 1rem; font-size: 1rem;
+}
+.add-form input:focus { outline: 2px solid #a78bfa; border-color: transparent; }
+.add-form select, .add-form button {
+  background: #1b1b2e; border: 1px solid #2d2d45; color: #eceaf5;
+  border-radius: 10px; padding: 0.7rem 1rem; font-size: 1rem; cursor: pointer;
+}
+.add-form button[type='submit'] { background: #7c3aed; border-color: #7c3aed; font-weight: 600; }
+.add-form button[type='submit']:hover { background: #8b5cf6; }
+
+.filters { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.filters .divider { width: 1px; height: 1.4rem; background: #2d2d45; margin: 0 0.3rem; }
+.filters button {
+  background: transparent; border: 1px solid #2d2d45; color: #9a96b0;
+  border-radius: 999px; padding: 0.35rem 0.9rem; font-size: 0.85rem; cursor: pointer;
+}
+.filters button.active { background: #2d2d45; color: #eceaf5; border-color: #a78bfa; }
+
+.list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.card {
+  background: #1b1b2e; border: 1px solid #2d2d45; border-radius: 14px;
+  padding: 0.9rem 1.1rem; transition: border-color 0.15s;
+}
+.card:hover { border-color: #3f3f63; }
+.card.done { border-left: 4px solid #34d399; }
+.card-main { display: flex; align-items: center; gap: 0.8rem; }
+.type-badge { font-size: 1.5rem; }
+.card-text { flex: 1; min-width: 0; }
+.card-text h3 { font-size: 1.05rem; overflow-wrap: anywhere; }
+.status { font-size: 0.8rem; }
+.status-planned { color: #9a96b0; }
+.status-in_progress { color: #fbbf24; }
+.status-completed { color: #34d399; }
+
+.card-actions { display: flex; gap: 0.4rem; align-items: center; }
+.action {
+  background: #2d2d45; border: none; color: #eceaf5; border-radius: 8px;
+  padding: 0.45rem 0.8rem; font-size: 0.85rem; cursor: pointer; white-space: nowrap;
+}
+.action:hover { background: #3f3f63; }
+.delete {
+  background: transparent; border: none; color: #6b6785; cursor: pointer;
+  font-size: 1rem; padding: 0.3rem;
+}
+.delete:hover { color: #f87171; }
+
+.rating { margin-top: 0.5rem; display: flex; align-items: center; gap: 1px; }
+.star {
+  background: none; border: none; color: #3f3f63; font-size: 1.15rem;
+  cursor: pointer; padding: 0 1px;
+}
+.star.filled { color: #fbbf24; }
+.rating-num { margin-left: 0.5rem; font-size: 0.85rem; color: #9a96b0; }
+
+.empty { text-align: center; color: #9a96b0; margin-top: 2.5rem; }
+.error { color: #f87171; font-size: 0.9rem; }
+.error.banner { text-align: center; margin-bottom: 1rem; }
+
+/* --- Neo-chan mascot --- */
+.mascot {
+  display: block;
+  margin: 0 auto 0.25rem;
+  animation: mascot-float 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(124, 58, 237, 0.35));
+}
+.mascot .antenna-tip {
+  animation: antenna-blink 1.6s ease-in-out infinite;
+}
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes antenna-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.empty .mascot { margin-bottom: 0.75rem; opacity: 0.9; }

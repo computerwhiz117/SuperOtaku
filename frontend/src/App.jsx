@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { api } from './api'
 import Mascot from './components/Mascot'
 import './App.css'
@@ -78,7 +79,7 @@ function ItemCard({ item, onUpdate, onDelete }) {
       <div className="card-main">
         <span className="type-badge">{item.media_type === 'anime' ? '📺' : '🎮'}</span>
         <div className="card-text">
-          <h3>{item.title}</h3>
+          <Link to={`/items/${item.id}`}><h3>{item.title}</h3></Link>
           <span className={`status status-${item.status}`}>
             {statusLabel(item.status, item.media_type)}
           </span>

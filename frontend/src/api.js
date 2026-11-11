@@ -24,4 +24,10 @@ export const api = {
   updateItem: (id, data) => request(`/items/${id}`, { method: 'PATCH', body: JSON.stringify(data) }),
   deleteItem: (id) => request(`/items/${id}`, { method: 'DELETE' }),
   stats: () => request('/stats'),
+  getItem: (id) => request(`/items/${id}`),
+  listComments: (itemId) => request(`/items/${itemId}/comments`),
+  addComment: (itemId, data) => request(`/items/${itemId}/comments`, { method: 'POST', body: JSON.stringify(data) }),
+  deleteComment: (commentId) => request(`/comments/${commentId}`, { method: 'DELETE' }),
+  lookup: (mediaType, title) =>
+    request(`/lookup/${mediaType}?title=${encodeURIComponent(title)}`),
 }
